@@ -85,7 +85,6 @@ if (inBrowser) {
 		// This page is loaded from the browser address bar or via a link from extern,
 		// it needs a state in the history
 		history.replaceState({ index: currentHistoryIndex, scrollX, scrollY }, '');
-		history.scrollRestoration = 'manual';
 	}
 }
 
@@ -223,7 +222,6 @@ const moveToLocation = (
 			// because we are already on the target page ...
 			// ... what comes next is an intra-page navigation
 			// that won't reload the page but instead scroll to the fragment
-			history.scrollRestoration = 'auto';
 			const savedState = history.state;
 			location.href = to.href; // this kills the history state on Firefox
 			if (!history.state) {
@@ -237,7 +235,6 @@ const moveToLocation = (
 				scrollTo({ left: 0, top: 0, behavior: 'instant' });
 			}
 		}
-		history.scrollRestoration = 'manual';
 	}
 };
 

@@ -187,7 +187,6 @@ export async function doPreparation(
 // leave other entries alone and do not accidentally add state.
 export const updateScrollPosition = (positions: { scrollX: number; scrollY: number }) => {
 	if (history.state) {
-		history.scrollRestoration = 'manual';
 		history.replaceState({ ...history.state, ...positions }, '');
 	}
 };
